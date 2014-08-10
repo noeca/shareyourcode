@@ -1,0 +1,24 @@
+{% if messages %}
+    <div class="messages">
+    <ul>
+    {% for message in messages %}
+        <li class="{{ message.tag }}">
+            {{ message }} 
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endif %}
+
+<h2>Opciones</h2>
+    <ul>
+        <li>
+            <a <a href="{% url ptb_listado %}">Lista de códigos</a></a>
+        </li>
+        <li>
+            <a href="{% url ptb_borrar object.id %}">Borrar este código</a>
+        </li>
+    </ul>	
+
+
+

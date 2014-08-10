@@ -1,0 +1,6 @@
+<h1>Esta seguro que desea borrar el código {{ object }}?</h1>
+<form action="{% url ptb_borrar object.id %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Borrar">
+</form>
+

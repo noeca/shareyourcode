@@ -1,0 +1,14 @@
+<h1>Crear un nuevo código</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" name="Guardar" value="Guardar">
+</form>
+
+
+<a href="{% url ptb_listado %}">Lista de códigos</a>
+
+
+

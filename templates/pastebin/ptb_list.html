@@ -1,0 +1,46 @@
+{% if messages %}
+    <div class="messages">
+    <ul>
+    {% for message in messages %}
+        <li class="{{ message.tag }}">
+            {{ message }} 
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endif %}
+
+{% if object_list %}
+<ul>
+    <table border="5"    width="70%"   cellpadding="4" cellspacing="3">
+      <tr>
+         <th colspan="6">
+           <h3><br>Lista de códigos</h3>
+         </th>
+      </tr>
+      <tr>
+          <th>Nombre</th>
+          <th>Lenguaje</th>
+          <th>Autor</th>
+          <th>Descripción</th>
+          <th>Fecha de creación</th>
+          <th>Ultima actualización</th>
+       </tr>
+    {% for paste in object_list %}
+       <tr> 
+           <td><a href="{% url ptb_edit paste.id  %}">{{paste.nombre}}</a></td>
+           <td>{{paste.lenguaje}}</td>
+           <td>{{paste.autor}}</td>
+           <td>{{paste.descripcion}}</td>
+           <td>{{paste.fecha_creacion}}</td>
+           <td>{{paste.fecha_actualizacion}}</td>
+        </tr>  
+    {% endfor %}
+    </table>
+</ul>
+{% else %}
+    <h1>No existe ningun programa por el momento</h1>
+{% endif %}
+
+<a href="{% url ptb_agregar %}">Crear nuevo codigo</a>
+
